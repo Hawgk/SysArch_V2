@@ -1,12 +1,17 @@
 import java.io.*;
+// Manages incoming data and provides buffer
 public class ManagementController {
 
+	// Currently not in use
 	private Sensor[] sensors = null;
 	private double min_distance;
+	// Buffers
 	private Measurement[] current_measurements = null;
+	// FIFO buffer
 	private Measurement[][] buffer = null;
-	private int sensor_count = 1;
-	private int buffer_size = 10;
+	// Static values
+	private static int sensor_count = 1;
+	private static int buffer_size = 10;
 
 	public ManagementController() {
 		current_measurements = new Measurement[sensor_count];
@@ -14,33 +19,38 @@ public class ManagementController {
 	}
 
 	public void Read_sensors() {
+		// Overflow buffer
 		Measurement overflow[] = new Measurement[sensor_count];
-
+		// Loop for reading sensor data
 		for(int i = 0; i < sensor_count; i++) {
 			current_measurements[i] = new Measurement(Read_temp(), "CPU temp");
-
+			// Checking last element of buffer vor values
+			// Catching overflow
 			if (buffer[buffer_size-1][i] != null) overflow[i] = buffer[buffer_size-1][i];
-
+			// Moving buffer to free up first element
 			for(int j = (buffer_size-1); j > 0; j--){
 				buffer[j][i] = buffer[j-1][i];
 			}
 
 			buffer[0][i] = current_measurements[0];
-
+			// Checking if overflow value has been logged
 			if(overflow[i] != null) {
 				if(!(overflow[i].isLogged())) {
-					// save to log file
+					// Output log in case of overflow
 					System.out.println("OVERFLOW! Name: " + overflow[i].getName() + " | Value: " + overflow[i].getValue() + " | Timestamp: " + overflow[i].getTimestamp());
 				}
 			}
 		}
 		overflow = null;
 	}
-
+	// Function reading CPU temperature of Raspberry Pi
+	// CPU temperature is saved to file on the RPi
 	public double Read_temp() {
+		// Setting error temperature if reading fails
 		double temp = -273;
 		String fileName = "/sys/class/thermal/thermal_zone0/temp";
 		String line = null;
+		// Reading value from temperature file
 		try {
 			FileReader fileReader = new FileReader(fileName);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
