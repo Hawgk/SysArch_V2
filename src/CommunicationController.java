@@ -13,6 +13,7 @@ public class CommunicationController {
 			for (int j = 0; i < buffer[i].length; i++) {
 				if (buffer[i][j] != null) {
 					if (!buffer[i][j].isLogged()) {
+						// Here values would be saved to file or sent
 						System.out.println("Name: " + buffer[i][j].getName() + " | Value: " + buffer[i][j].getValue() + " | Timestamp: " + buffer[i][j].getTimestamp());
 						buffer[i][j].setLogged(true);
 					}

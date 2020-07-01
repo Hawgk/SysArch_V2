@@ -43,6 +43,7 @@ public class ManagementController {
 		}
 		overflow = null;
 	}
+
 	// Function reading CPU temperature of Raspberry Pi
 	// CPU temperature is saved to file on the RPi
 	public double Read_temp() {
