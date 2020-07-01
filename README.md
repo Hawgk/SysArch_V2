@@ -50,3 +50,7 @@ Design a vehicle control unit which sends and receives data from network.
 ## Start-up
 - Start terminal from "Program_files" folder and type in "sudo bash run.sh"
 - Alternatively you can run "java -jar program.jar" (JDK 11 must be installed)
+
+## Tasks
+#### Amando
+#### Alex
