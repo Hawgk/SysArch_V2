@@ -53,4 +53,20 @@ Design a vehicle control unit which sends and receives data from network.
 
 ## Tasks
 ### Amando
+- Threads
+    - ReadingThread
+    - LoggingThread
+    - DisplayThread
+- main
+- MotorController
+- CollisionController
+- CommunicationController
 ### Alex
+- Sensor
+    - Compass
+    - LIDAR
+    - RFID
+    - Speed
+- ManagementController
+- Measurement
+- VehicleUI
