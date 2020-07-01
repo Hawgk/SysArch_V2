@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class LoggingThread implements Runnable{
     // Thread that runs the Send_values() method of CommunicationController after each delay
 

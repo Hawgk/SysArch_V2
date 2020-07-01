@@ -1,3 +1,8 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class CommunicationController {
 
 	private MotorController motorController;
@@ -8,7 +13,7 @@ public class CommunicationController {
 		this.managementController = managementController;
 	}
 
-	public void Send_values() {
+	public void Send_values() throws IOException {
 		var buffer = managementController.getBuffer();
 		
 		BufferedWriter my_writer = null;
