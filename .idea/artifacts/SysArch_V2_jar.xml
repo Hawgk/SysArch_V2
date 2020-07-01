@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="SysArch_V2:jar">
-    <output-path>$PROJECT_DIR$/Program files</output-path>
-    <root id="archive" name="SysArch_V2.jar">
-      <element id="module-output" name="SysArch_V2" />
-    </root>
-  </artifact>
-</component>
