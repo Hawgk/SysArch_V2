@@ -19,8 +19,8 @@ public class CommunicationController {
 		BufferedWriter my_writer = null;
 
 		try{
-
-			File my_file = new File("log.txt");
+			var dir = System.getProperty("user.dir");
+			File my_file = new File(dir + "/log.txt");
 			if(my_file.createNewFile())System.out.println("File created: " + my_file.getName());
 
 			my_writer = new BufferedWriter(new FileWriter(my_file,true));
