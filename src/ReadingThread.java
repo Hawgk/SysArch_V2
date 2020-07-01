@@ -1,5 +1,5 @@
 public class ReadingThread implements Runnable{
-    // Thread that runs the clients check for the reset value after each delay
+    // Thread that runs the Read_sensors() method of ManagementController after each delay
 
     // Thread values and object references
     ManagementController managementController;
@@ -10,13 +10,18 @@ public class ReadingThread implements Runnable{
     private long delay_time = 100;
 
     public ReadingThread(ManagementController managementController){
+        
         this.managementController=managementController;
+        
         // Create new Thread
         t = new Thread(this, "Reading Thread");
+        
         // Setting highest priority
         t.setPriority(10);
+        
         // print out name
         System.out.println("New thread: " + t);
+        
         // Starts Thread
         t.start();
     }
