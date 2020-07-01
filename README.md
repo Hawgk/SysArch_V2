@@ -18,7 +18,7 @@ Design a vehicle control unit which sends and receives data from network.
     - Use the SD Card, PuTTY or VNC Viewer
 - Start terminal from "Program_files" folder and type in "sudo bash run.sh"
 
-#### PuTTY
+### PuTTY
 - Connect Raspberry Pi to your network
 - Find out Raspberry Pi's IP address
 - Start PuTTY
@@ -34,7 +34,7 @@ Design a vehicle control unit which sends and receives data from network.
 - Confirm password
 - Note: "pi@raspberrypi" has to be changed to whatever is shown in the terminal of PuTTY, can vary
 
-#### VNC Viewer
+### VNC Viewer
 - Install VNC Viewer on Windows
 - Connect Raspberry Pi to your network
 - Find out Raspberry Pi's IP address
@@ -52,5 +52,5 @@ Design a vehicle control unit which sends and receives data from network.
 - Alternatively you can run "java -jar program.jar" (JDK 11 must be installed)
 
 ## Tasks
-#### Amando
-#### Alex
+### Amando
+### Alex
