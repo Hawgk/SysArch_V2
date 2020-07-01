@@ -41,6 +41,8 @@ public class LoggingThread implements Runnable{
             // catch the exception in case the Thread is interrupted
         }catch (InterruptedException e) {
             System.out.println(name + "Interrupted");
+        } catch (IOException e) {
+            System.out.println(name + " has IO Exception");
         }
     }
 }
