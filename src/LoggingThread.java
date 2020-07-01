@@ -1,5 +1,5 @@
 public class LoggingThread implements Runnable{
-    // Thread that runs the clients check for the reset value after each delay
+    // Thread that runs the Send_values() method of CommunicationController after each delay
 
     // Thread values and object references
     CommunicationController communicationController;
@@ -10,12 +10,14 @@ public class LoggingThread implements Runnable{
     private long delay_time = 100;
 
 
-    // Reference to BoundaryObject is handed over from the ServerThread, so it can be passed down to the Client
+    // Reference to CommunicationController is handed over
     public LoggingThread(CommunicationController communicationController){
+        
         this.communicationController = communicationController;
 
         // Create new Thread
         t = new Thread(this, "Reading Thread");
+        
         // Setting second lowest priority
         t.setPriority(2);
 
